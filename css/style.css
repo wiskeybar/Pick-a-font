@@ -1,0 +1,401 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.699);
+}
+
+:root {
+  --box1-color: blue;
+  --box2-color: green;
+  --box3-color: yellow;
+  --box4-color: brown;
+  --box5-color: cyan;
+  --box6-color: lime;
+  --box7-color: purple;
+  --box8-color: red;
+  --box9-color: magenta;
+  --box10-color: darkblue;
+  --box1-font-color: cyan;
+  --box2-font-color: darkblue;
+  --box3-font-color: brown;
+  --box4-font-color: magenta;
+  --box5-font-color: red;
+  --box6-font-color: yellow;
+  --box7-font-color: green;
+  --box8-font-color: blue;
+  --box9-font-color: lime;
+  --box10-font-color: purple;
+  --roboto: 'Roboto', sans-serif;
+  --open-sans: 'Open Sans', sans-serif;
+  --lato: 'Lato', sans-serif;
+  --montserrat: 'Montserrat', sans-serif;
+  --roboto-condensed: 'Roboto Condensed', sans-serif;
+  --source-sans-pro: 'Source Sans Pro', sans-serif;
+  --oswald: 'Oswald', sans-serif;
+  --raleway: 'Raleway', sans-serif;
+  --merriweather: 'Merriweather', serif;
+  --pt-sans: 'PT Sans', sans-serif;
+}
+
+.wrapper {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "header" "main" "footer";
+  grid-gap: 3px;
+}
+
+@media (min-width: 668px) {
+  .wrapper {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    max-width: 60%;
+  }
+}
+
+.wrapper header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+  background-color: rgba(128, 128, 128, 0.548);
+}
+
+.wrapper main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: main;
+  background-color: white;
+  min-height: 100vh;
+}
+
+.wrapper footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: footer;
+  background-color: rgba(211, 211, 211, 0.596);
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+@media (min-width: 736px) {
+  header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+header .title {
+  text-align: center;
+  padding-top: 3vh;
+  text-shadow: 0 0 3px white;
+}
+
+header .settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+  padding: 3vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header .settings .fntSettings,
+header .settings .bcgSettings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-animation: blink 25s linear infinite;
+          animation: blink 25s linear infinite;
+  font-family: var(--oswald);
+}
+
+@-webkit-keyframes blink {
+  0% {
+    text-shadow: none;
+  }
+  48% {
+    text-shadow: none;
+  }
+  49% {
+    text-shadow: 0 0 4px red;
+  }
+  50% {
+    text-shadow: none;
+  }
+  51% {
+    text-shadow: 0 0 4px red;
+  }
+  52% {
+    text-shadow: none;
+  }
+  53% {
+    text-shadow: 0 0 4px red;
+  }
+  54% {
+    text-shadow: none;
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes blink {
+  0% {
+    text-shadow: none;
+  }
+  48% {
+    text-shadow: none;
+  }
+  49% {
+    text-shadow: 0 0 4px red;
+  }
+  50% {
+    text-shadow: none;
+  }
+  51% {
+    text-shadow: 0 0 4px red;
+  }
+  52% {
+    text-shadow: none;
+  }
+  53% {
+    text-shadow: 0 0 4px red;
+  }
+  54% {
+    text-shadow: none;
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+header .settings .fntSettings p,
+header .settings .fntSettings input,
+header .settings .bcgSettings p,
+header .settings .bcgSettings input {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+}
+
+header .settings .fntSettings #fntRange,
+header .settings .fntSettings #bcgRange,
+header .settings .bcgSettings #fntRange,
+header .settings .bcgSettings #bcgRange {
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+}
+
+header .settings label {
+  text-align: center;
+}
+
+main {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 6px;
+  padding: 6px;
+      grid-template-areas: "box1" "box2" "box3" "box4" "box5" "box6" "box7" "box8" "box9" "box10";
+}
+
+@media (orientation: landscape) and (max-width: 736px) {
+  main {
+        grid-template-areas: "box1 box2" "box3 box4" "box5 box6" "box7 box8" "box9 box10";
+  }
+}
+
+@media (min-width: 668px) {
+  main {
+        grid-template-areas: "box1 box1 box1 box2" "box3 box3 box4 box4" "box5 box5 box6 box6" "box7 box7 box7 box8" "box9 box9 box10 box10";
+  }
+}
+
+main .box {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "fontExample bcgHex" "fontExample fontHex";
+  -ms-grid-columns: 60% 35%;
+      grid-template-columns: 60% 35%;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.3s linear all;
+  transition: 0.3s linear all;
+  -webkit-box-shadow: 0 0 2.5px black;
+          box-shadow: 0 0 2.5px black;
+  border-radius: 1% /7%;
+  padding: 5px;
+}
+
+main .box .fontExample {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: fontExample;
+}
+
+@-webkit-keyframes blend {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blend {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+main .box .bcgHexInfo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: bcgHex;
+  -webkit-box-shadow: 0 0 5px white;
+          box-shadow: 0 0 5px white;
+  border-radius: 1% / 15%;
+  width: 100%;
+  height: 90%;
+}
+
+main .box .fontHexInfo {
+  width: 100%;
+  height: 90%;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: fontHex;
+  -webkit-box-shadow: 0 0 5px white;
+          box-shadow: 0 0 5px white;
+}
+
+main .box1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: box1;
+  background-color: var(--box1-color);
+  color: var(--box1-font-color);
+  font-family: var(--roboto);
+}
+
+main .box2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: box2;
+  background-color: var(--box2-color);
+  color: var(--box2-font-color);
+  font-family: var(--open-sans);
+}
+
+main .box3 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: box3;
+  background-color: var(--box3-color);
+  color: var(--box3-font-color);
+  font-family: var(--lato);
+}
+
+main .box4 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: box4;
+  background-color: var(--box4-color);
+  color: var(--box4-font-color);
+  font-family: var(--montserrat);
+}
+
+main .box5 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: box5;
+  background-color: var(--box5-color);
+  color: var(--box5-font-color);
+  font-family: var(--roboto-condensed);
+}
+
+main .box6 {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  grid-area: box6;
+  background-color: var(--box6-color);
+  color: var(--box6-font-color);
+  font-family: var(--source-sans-pro);
+}
+
+main .box7 {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  grid-area: box7;
+  background-color: var(--box7-color);
+  color: var(--box7-font-color);
+  font-family: var(--oswald);
+}
+
+main .box8 {
+  -ms-grid-row: 8;
+  -ms-grid-column: 1;
+  grid-area: box8;
+  background-color: var(--box8-color);
+  color: var(--box8-font-color);
+  font-family: var(--raleway);
+}
+
+main .box9 {
+  -ms-grid-row: 9;
+  -ms-grid-column: 1;
+  grid-area: box9;
+  background-color: var(--box9-color);
+  color: var(--box9-font-color);
+  font-family: var(--merriweather);
+}
+
+main .box10 {
+  -ms-grid-row: 10;
+  -ms-grid-column: 1;
+  grid-area: box10;
+  background-color: var(--box10-color);
+  color: var(--box10-font-color);
+  font-family: var(--pt-sans);
+}
+
+footer {
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */
